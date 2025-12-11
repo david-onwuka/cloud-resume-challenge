@@ -13,7 +13,7 @@ This repository contains my Cloud Resume Challenge project, showcasing a full se
 
 
  LIVE SITE : https://david-cloud.com.
-![Cloud Resume Portfolio Screenshot](screenshot.png)
+ ![Cloud Resume Portfolio Screenshot](david-cloud.jpeg)
 
 
  
