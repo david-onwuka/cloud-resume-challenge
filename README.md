@@ -2,13 +2,19 @@ CLOUD RESUME CHALLENGE PORTFOLIO
 
 
 
-This is my AWS Cloud Resume Challenge portfolio—a live serverless website that shows real-world cloud engineering skills and Infrastructure as Code.
+
+
+This repository contains my Cloud Resume Challenge project, showcasing a full serverless cloud application built on AWS. The project demonstrates real-world cloud engineering and DevOps skills using infrastructure as code (Terraform), serverless backend, and a static frontend
+
+
 
  LIVE SITE : https://david-cloud.com.
+
 
  
 
 WHY I BUILT THIS
+
 
 The goal of this project was to:
 
@@ -24,21 +30,27 @@ Have a portfolio piece that shows practical cloud skills
 
 
 
+
 HOW IT WORKS
+
 
 
 Frontend: HTML/CSS hosted on S3, served through CloudFront with HTTPS.
 Backend: API Gateway triggers a Lambda function, which updates a visitor count in DynamoDB.
 Infrastructure: Route 53 handles DNS, ACM handles SSL, Terraform handles everything.
 
+
  SIMPLE FLOW DIAGRAM:
+ 
  
 
 User → CloudFront → S3 (frontend)
 
                   → API Gateway → Lambda → DynamoDB
 
+
 TECH STACK:
+
 
 
 
@@ -50,12 +62,17 @@ Python: Lambda function
 
 GitHub: Version control
 
-LAMBDA VISITOR COUNTER
+
+
+LAMBDA VISITOR COUNTER:
+
 
 
 
 Python function that increments the visitor count:
 
+
+```python
 import boto3
 import os
 
@@ -75,16 +92,19 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'body': f'{{"count": {count}}}'
     }
-
+```
 
 
 ENVIRONMET VARIABLE:
 
 
+
 TABLE_NAME = visitor-count
 
 
+
 API URL:
+
 
 
 https://gmijlo36qc.execute-api.us-east-1.amazonaws.com/prod/Visitor-count
@@ -92,6 +112,7 @@ https://gmijlo36qc.execute-api.us-east-1.amazonaws.com/prod/Visitor-count
 
 
  FRONTEND INTEGRATION:
+ 
 
 The frontend fetches the live count from the API and updates the page:
 
@@ -104,6 +125,7 @@ fetch('https://gmijlo36qc.execute-api.us-east-1.amazonaws.com/prod/Visitor-count
 
 
  DEPLOYMENT STEPS:
+
  
 
 1. Use Terraform to deploy backend and frontend infrastructure.
@@ -134,7 +156,9 @@ Ready for CI/CD integration.
 
 
 
+
 NEXT STEPS:
+
 
 
 Set up GitHub Actions to automatically deploy Terraform changes.
