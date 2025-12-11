@@ -1,8 +1,12 @@
 CLOUD RESUME CHALLENGE PORTFOLIO
 
+
+
 This is my AWS Cloud Resume Challenge portfolio—a live serverless website that shows real-world cloud engineering skills and Infrastructure as Code.
 
  LIVE SITE : https://david-cloud.com.
+
+ 
 
 WHY I BUILT THIS
 
@@ -18,18 +22,25 @@ Make a website that’s secure, global, and production-ready
 
 Have a portfolio piece that shows practical cloud skills
 
+
+
 HOW IT WORKS
+
 
 Frontend: HTML/CSS hosted on S3, served through CloudFront with HTTPS.
 Backend: API Gateway triggers a Lambda function, which updates a visitor count in DynamoDB.
 Infrastructure: Route 53 handles DNS, ACM handles SSL, Terraform handles everything.
 
  SIMPLE FLOW DIAGRAM:
+ 
 
 User → CloudFront → S3 (frontend)
+
                   → API Gateway → Lambda → DynamoDB
 
 TECH STACK:
+
+
 
 AWS: S3, CloudFront, Lambda, DynamoDB, API Gateway, Route 53, ACM
 
@@ -40,6 +51,8 @@ Python: Lambda function
 GitHub: Version control
 
 LAMBDA VISITOR COUNTER
+
+
 
 Python function that increments the visitor count:
 
@@ -63,13 +76,20 @@ def lambda_handler(event, context):
         'body': f'{{"count": {count}}}'
     }
 
+
+
 ENVIRONMET VARIABLE:
+
 
 TABLE_NAME = visitor-count
 
+
 API URL:
 
+
 https://gmijlo36qc.execute-api.us-east-1.amazonaws.com/prod/Visitor-count
+
+
 
  FRONTEND INTEGRATION:
 
@@ -82,7 +102,9 @@ fetch('https://gmijlo36qc.execute-api.us-east-1.amazonaws.com/prod/Visitor-count
   });
 
 
+
  DEPLOYMENT STEPS:
+ 
 
 1. Use Terraform to deploy backend and frontend infrastructure.
 
@@ -99,6 +121,7 @@ fetch('https://gmijlo36qc.execute-api.us-east-1.amazonaws.com/prod/Visitor-count
 5. Everything is version-controlled in GitHub.
 
 
+
  WHAT WORKS:
 
 Real-time visitor counter.
@@ -110,7 +133,9 @@ Fully automated with Terraform.
 Ready for CI/CD integration.
 
 
+
 NEXT STEPS:
+
 
 Set up GitHub Actions to automatically deploy Terraform changes.
 
@@ -122,6 +147,7 @@ Improve security with WAF, headers, and IAM permissions.
 
 
 LINKS:
+
 
 GitHub Repo: cloud-resume-challenge.
 
