@@ -1,7 +1,11 @@
 CLOUD RESUME CHALLENGE PORTFOLIO
 
 
-
+![AWS Certified](https://img.shields.io/badge/AWS-Certified-blue?style=for-the-badge&logo=amazon-aws)
+![Cloud Resume Challenge](https://img.shields.io/badge/Cloud_Resume_Challenge-Completed-brightgreen?style=for-the-badge)
+![Terraform](https://img.shields.io/badge/Terraform-Used-lightgrey?style=for-the-badge&logo=terraform)
+![Python](https://img.shields.io/badge/Python-Used-yellow?style=for-the-badge&logo=python)
+![Serverless](https://img.shields.io/badge/Serverless-Architecture-purple?style=for-the-badge)
 
 
 This repository contains my Cloud Resume Challenge project, showcasing a full serverless cloud application built on AWS. The project demonstrates real-world cloud engineering and DevOps skills using infrastructure as code (Terraform), serverless backend, and a static frontend
