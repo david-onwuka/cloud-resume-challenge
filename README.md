@@ -18,7 +18,8 @@ This repository contains my Cloud Resume Challenge project, showcasing a full se
 
  
 
-WHY I BUILT THIS..
+WHY I BUILT THIS.
+
 
 
 The goal of this project was to:
