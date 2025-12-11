@@ -173,6 +173,8 @@ Add monitoring with CloudWatch dashboards and alarms.
 
 Improve security with WAF, headers, and IAM permissions.
 
+[Updated CI/CD setup]
+
 
 
 
