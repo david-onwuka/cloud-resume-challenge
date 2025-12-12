@@ -3,7 +3,7 @@ name: Cloud Resume Deployment
 on:
   push:
     branches:
-      - main  # Run when you push to main
+      - main
 
 jobs:
   deploy:
@@ -15,15 +15,14 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.11
+          python-version: '3.11'
 
       - name: Install AWS CLI
         run: |
-          sudo apt-get update
-          sudo apt-get install -y unzip curl
           curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
           unzip awscliv2.zip
           sudo ./aws/install
+          aws --version
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -34,7 +33,6 @@ jobs:
 
       - name: Deploy Terraform
         run: |
-          cd terraform
           terraform init
           terraform apply -auto-approve
 
