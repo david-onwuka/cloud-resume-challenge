@@ -21,15 +21,18 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
-        with:
-          terraform_version: 1.5.0
 
-      - name: Deploy Terraform
+      - name: Deploy Terraform Infrastructure
         run: |
-          cd terraform
           terraform init
           terraform apply -auto-approve
 
-      - name: Deploy Frontend
+      - name: Create Frontend Folder
+        run: |
+          mkdir -p frontend
+          echo "<!DOCTYPE html><html><head><title>My Resume</title></head><body><h1>Cloud Resume Challenge</h1><p>Website coming soon!</p></body></html>" > frontend/index.html
+          echo "body { font-family: Arial; margin: 40px; }" > frontend/style.css
+
+      - name: Deploy Frontend to S3
         run: |
           aws s3 sync ./frontend s3://david-cloud-resume-challenge2025 --delete
